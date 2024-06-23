@@ -375,7 +375,7 @@ export class HomeAssistantFormat implements IMqttFormat {
     const payload: Record<string, string> = {};
     for(const zone of this.platform.service.getZonesInstalled()) {
       if (!this.platform.service.getUserEnabled(zone)) {
-        payload[zone] = 'off';
+        payload[zone] = 'disabled';
         continue;
       }
       if (this.platform.service.getFanState()) {
